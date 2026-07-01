@@ -5,14 +5,10 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 MAX_LEN = 150
+model = load_model("depression_bilstm.h5")
+tokenizer = joblib.load("tokenizer.pkl")
 
-model = load_model(
-    "models/depression_bilstm.h5"
-)
 
-tokenizer = joblib.load(
-    "models/tokenizer.pkl"
-)
 
 st.title("Mental Health Detection")
 
